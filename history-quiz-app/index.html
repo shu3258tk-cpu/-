@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6年生 歴史クイズに挑戦！</title>
+    <!-- SEO meta tags -->
+    <meta name="description" content="小学校6年生向けの楽しく学べる歴史クイズアプリです。様々な時代の問題に挑戦して歴史マスターになろう！">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>歴史マスターへの道</h1>
+            <p>6年生で習う歴史のクイズに挑戦しよう！</p>
+            <button id="start-btn" class="primary-btn">スタート</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen hidden">
+            <div class="progress-bar" aria-label="進行状況">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <div class="stats">
+                <span id="question-counter">問題 1/10</span>
+                <span id="score-display">スコア: 0</span>
+            </div>
+            
+            <div id="question-container" class="card">
+                <div class="era-badge" id="era-badge">時代</div>
+                <h2 id="question-text">ここに問題文が表示されます</h2>
+                
+                <!-- Answer Area -->
+                <div id="answer-area">
+                    <!-- Options for multiple choice will be injected here -->
+                    <!-- Input for text answer will be injected here -->
+                </div>
+            </div>
+
+            <!-- Feedback Modal/Area -->
+            <div id="feedback-area" class="hidden" aria-live="polite">
+                <h3 id="feedback-title"></h3>
+                <p id="feedback-explanation"></p>
+                <button id="next-btn" class="primary-btn">次の問題へ</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen hidden">
+            <h1>結果発表</h1>
+            <div class="score-circle">
+                <span id="final-score">0</span>
+                <span>/ 10</span>
+            </div>
+            <p id="result-message">よくがんばりました！</p>
+            <button id="restart-btn" class="primary-btn">もう一度挑戦する</button>
+        </div>
+    </div>
+    
+    <!-- Particles/Confetti layer -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>
